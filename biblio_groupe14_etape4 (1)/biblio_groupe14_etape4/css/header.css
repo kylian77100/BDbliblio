@@ -1,0 +1,70 @@
+.bd{
+height: 500px;
+width: 100%;
+position: relative;
+}
+
+
+.bd_texture{
+width: 100%;
+height: 100%;
+top:0;
+left:0;
+position: absolute;
+background: url(../img/informatique.jpg) center no-repeat ;
+background-size: cover; 
+opacity: 0,5;
+}
+
+
+
+.bd_Navbar{
+width: 100%;
+height: 100px;
+display: flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+
+.bd_navbar-logo-title{
+color:white;
+font-size: 25px;
+}
+
+.bd_navbar-menu-link{
+color: white;
+text-decoration: none;
+margin-left: 60px;
+
+}
+
+.bd_mask{
+	position: absolute;
+	bottom: 0;
+	background: 0 0;
+	height: 40px;
+	width: 100%;
+	z-index: 10²;
+}
+
+.bed_slogan-title{
+color:white;
+font-size:42px;	
+font-style: italic;
+}
+
+.bd_slogan{
+text-align:center;
+margin-top: 35px;
+}
+
+.bd_slogan-btn{
+color: white;
+text-decoration: none;
+padding: 20px;
+background: #00b894
+}
