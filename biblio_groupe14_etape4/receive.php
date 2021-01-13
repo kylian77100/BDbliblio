@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 			$req=$addreq;
 		}
         echo "<div align='center' class='requete'>Bonjour <b>$first_name $name</b> votre requête pour: <i>".$req."</i> a bien été transmise aux responsables de <b>BDbliothèque</b>.</div>";
-        $to = 'moi@domaine.com';
+        $to = 'antoine.benoit@ecole-ipssi.net';
         
         $msg  = 'Bonjour,'."\r\n\r\n";
 		$msg .= 'Ce mail a été envoyé depuis monsite.com par '.$firts_name.' '.$name."\r\n\r\n";
