@@ -6,16 +6,24 @@ require "head.php";
 ?>
 
 <br><br><br>
-
+<?php
+    require "connexion_bdd.php"
+?>
 <div class="grille">
 
 
-<?php
-//    require "connexion_bdd.php"
-?>
     <?php
-        //$res = $link->query("SELECT titre FROM Livre");
-        //echo $res;
+        $res = $link->query("SELECT titre,isbn FROM Livre");
+        if($res)
+        {
+            while($row = mysqli_fetch_array($res, MYSQLI_ASSOC))
+            {
+                echo "<div align='center'>";
+                echo "<h3><a href='".$row["isbn"].".php'><b>".$row["titre"]."</b></a></h3>";
+                echo "<a href='".$row["isbn"].".php'><img src='img/".row["isbn"].".jpg'></a>";
+                echo "</div>";
+            }
+        }
     ?>
 
 	
