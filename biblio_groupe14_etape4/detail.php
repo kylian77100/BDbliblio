@@ -22,7 +22,7 @@ if(isset($_GET["isbn"])){
     
     
 		echo "<br>";
-		echo "<img src='img/".$isbn['isbn']."jpg'  height='777,515625' width='590,625'>";
+		echo "<img src='img/".$id.".jpg'  height='777,515625' width='590,625'>";
 		echo "<p><a href='".$id_aut['id'].".php?perso=".$id_aut['id']."'>Auteur: ".$prenom_aut['prenom']." ".$nom_aut['nom']."</a></p>";
 		echo "<p><a href='".$id_ilus['id'].".php?perso=".$id_ilus['id']."'>Illustrateur: ".$prenom_ilus['prenom']." ".$nom_ilus['nom']."</a></p>";
 		echo "<p>Date de parution: ".$date['annee']."</p>";
