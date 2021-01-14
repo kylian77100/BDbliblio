@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
 
 <?php
 require "head.php";
@@ -20,7 +19,7 @@ require "head.php";
             {
                 echo "<div align='center'>";
                 echo "<h3><a href='".$row["isbn"].".php?isbn=".$row["isbn"]."'><b>".$row["titre"]."</b></a></h3>";
-                echo "<a href='".$row["isbn"].".php'><img src='img/".$row["isbn"].".jpg' height='552,9' width='420'></a>";
+                echo "<a href='".$row["isbn"].".php?isbn=".$row["isbn"]."'><img src='img/".$row["isbn"].".jpg' height='552,9' width='420'></a>";
                 echo "</div>";
             }
         }
