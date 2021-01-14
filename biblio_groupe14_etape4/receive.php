@@ -28,8 +28,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		$msg .= '***************************'."\r\n";
 		
 		$headers = 'From: '.$first_name.$name.' <'.$mail.'>'."\r\n\r\n";
-		
-		mail($to, $why_contact, $msg, $headers);
+		mb_send_mail ($to, $why_contact, $msg , $headers, null );
+		//mail($to, $why_contact, $msg, $headers);
         
      }
 ?>
