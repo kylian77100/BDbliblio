@@ -17,13 +17,13 @@ echo "<div class='bd_grille'>";
 
 
 
-        $res = $link->query("SELECT Livre.titre FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne WHERE Personne.id =$idPersonne");
+        $res = $link->query("SELECT Livre.titre,Livre.isbn FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne WHERE Personne.id =$idPersonne");
         if($res)
         {
             echo"<ul>";
             while($row = mysqli_fetch_array($res, MYSQLI_ASSOC))
             {
-                echo "<li><b>".$row['titre']."</b></li><br>";
+                echo "<li><a href='".$row['isbn'].".php?isbn=".$row["isbn"]."'><b>".$row['titre']."</b></a></li><br>";
             }
             echo"</ul>";
         }
