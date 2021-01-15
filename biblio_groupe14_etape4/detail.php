@@ -10,10 +10,10 @@ if(isset($_GET["isbn"])){
     $nbpages = $link->query("SELECT nbpages FROM Livre WHERE isbn=$id")->fetch_assoc();
     $editeur = $link->query("SELECT Editeur.libelle FROM Livre JOIN Editeur ON Editeur.id = Livre.editeur WHERE isbn=$id")->fetch_assoc();
     $prenom_aut = $link->query("SELECT Personne.prenom FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Auteur'")->fetch_assoc();
-    $id_aut = $link->query("SELECT Personne.id FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Auteur'")->fetch_assoc();
+    $id_aut = $link->query("SELECT Personne.id as 'num' FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Auteur'")->fetch_assoc();
     $nom_aut = $link->query("SELECT Personne.nom FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Auteur'")->fetch_assoc();
     $prenom_ilus = $link->query("SELECT Personne.prenom FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Illustrateur'")->fetch_assoc();
-    $id_ilus = $link->query("SELECT Personne.id FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Illustrateur'")->fetch_assoc();
+    $id_ilus = $link->query("SELECT Personne.id as 'num' FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Illustrateur'")->fetch_assoc();
     $nom_ilus = $link->query("SELECT Personne.nom FROM Livre JOIN Auteur ON Livre.isbn = Auteur.idLivre JOIN Personne ON Personne.id = Auteur.idPersonne JOIN Role ON Role.id = Auteur.idRole WHERE isbn=$id AND Role.libelle='Illustrateur'")->fetch_assoc();
     
     
@@ -23,8 +23,8 @@ if(isset($_GET["isbn"])){
     
 		echo "<br>";
 		echo "<img src='img/".$id.".jpg'  height='777,515625' width='590,625'>";
-		echo "<p><a href='".$id_aut['id'].".php?perso=".$id_aut['id']."'>Auteur: ".$prenom_aut['prenom']." ".$nom_aut['nom']."</a></p>";
-		echo "<p><a href='".$id_ilus['id'].".php?perso=".$id_ilus['id']."'>Illustrateur: ".$prenom_ilus['prenom']." ".$nom_ilus['nom']."</a></p>";
+		echo "<p><a href='".$id_aut['num'].".php?perso=".$id_aut['num']."'>Auteur: ".$prenom_aut['prenom']." ".$nom_aut['nom']."</a></p>";
+		echo "<p><a href='".$id_ilus['num'].".php?perso=".$id_ilus['num']."'>Illustrateur: ".$prenom_ilus['prenom']." ".$nom_ilus['nom']."</a></p>";
 		echo "<p>Date de parution: ".$date['annee']."</p>";
 		echo "<p>Editeur: ".$editeur['libelle']."</p>";
 		echo "<p>Nombres de pages:".$nbpages['nbpages']."</p>";
