@@ -1,0 +1,40 @@
+.livres {
+text-align: center;
+}
+
+.livre_title{
+font-size:50px;
+color: black;
+border-bottom:  5px solid #00b894;
+display: inline;
+}
+
+.livre_items{
+display: flex;	
+flex-direction: row;
+justify-content: space-between;
+}
+
+.livre{
+width: 28%;
+height: 600px;	
+background-size: cover;
+
+}
+
+
+.texte_items{
+display: flex;	
+flex-direction: row;
+justify-content: space-between;
+}
+
+.livres_textes{
+width: 28%;
+height: 600px;	
+background-size: cover;}
+
+h3>a{
+	color:white;
+	font-size:30px;
+}
